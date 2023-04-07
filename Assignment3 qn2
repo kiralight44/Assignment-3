@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int i, j;
+    int composites[50] = {0}; // initialize all elements to 0
+
+    // Find all composite numbers between 1 and 50
+    for(i=2; i<=50; i++) {
+        for(j=2; j<i; j++) {
+            if(i % j == 0) {
+                composites[i-1] = i;
+                break;
+            }
+        }
+    }
+
+    // Print out the composite numbers
+    printf("The composite numbers between 1 and 50 are:\n");
+    for(i=0; i<50; i++) {
+        if(composites[i] != 0) {
+            printf("%d ", composites[i]);
+        }
+    }
+
+    return 0;
+}
