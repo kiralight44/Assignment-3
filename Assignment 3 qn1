@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100];
+    int n, i, num, pos = -1;
+
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    printf("Enter the elements of the array:\n");
+    for(i=0; i<n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the number to be searched: ");
+    scanf("%d", &num);
+
+    for(i=0; i<n; i++) {
+        if(arr[i] == num) {
+            pos = i + 1;
+            break;
+        }
+    }
+
+    if(pos == -1) {
+        printf("%d is not present in the array", num);
+    } else {
+        printf("%d is present at position %d in the array", num, pos);
+    }
+
+    return 0;
+}
